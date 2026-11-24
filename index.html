@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<link rel="manifest" href="manifest.webmanifest">
+<title>MY STUFF — личный инвентарь</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#141c2f;--panel2:#1c2740;--text:#eef2ff;--muted:#9aa8c4;--line:#2a3651;--accent:#8b9cff;--good:#3bc98b;--warn:#f5b942;--bad:#ff7373;--shadow:0 14px 40px #0003}
+[data-theme="light"]{color-scheme:light;--bg:#f4f6fb;--panel:#fff;--panel2:#eef2f9;--text:#172033;--muted:#66728a;--line:#dce2ee;--accent:#5369db;--good:#16895b;--warn:#a86c00;--bad:#c83d3d;--shadow:0 14px 40px #26365712}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.app{max-width:1120px;margin:auto;padding:22px 20px 90px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.brand{font-weight:850;letter-spacing:.12em;font-size:20px}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:.04em;font-weight:500}.actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:10px 14px}.btn.primary{background:var(--accent);border-color:var(--accent);color:white;font-weight:700}.btn.icon{width:42px;height:42px;padding:0;font-size:18px}.hero{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}.hero h1{font-size:clamp(25px,4vw,36px);margin:0 0 5px}.muted{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}.stat,.panel,.item,.category{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.stat{padding:16px}.stat strong{font-size:26px;display:block}.stat span{color:var(--muted);font-size:13px}.layout{display:grid;grid-template-columns:260px 1fr;gap:16px}.side{padding:16px;height:max-content}.side h3,.section-head h2{margin:0 0 12px}.nav{display:flex;flex-direction:column;gap:6px}.nav button{border:0;background:transparent;color:var(--muted);text-align:left;padding:11px 12px;border-radius:10px}.nav button.active,.nav button:hover{background:var(--panel2);color:var(--text)}.main{min-width:0}.toolbar{display:flex;gap:9px;margin-bottom:14px}.search{flex:1;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--text)}.filters{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}.filters select{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:9px}.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.item{padding:14px;display:flex;gap:12px;min-width:0}.thumb{width:76px;height:76px;flex:0 0 76px;border-radius:12px;background:var(--panel2);display:grid;place-items:center;overflow:hidden;font-size:28px}.thumb img{width:100%;height:100%;object-fit:cover}.item-content{min-width:0;flex:1}.item h3{margin:0 0 3px;font-size:16px;overflow-wrap:anywhere}.item p{margin:0;color:var(--muted);font-size:13px}.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.pill{font-size:11px;padding:4px 8px;border-radius:20px;background:var(--panel2);color:var(--muted)}.pill.good{color:var(--good)}.pill.warn{color:var(--warn)}.pill.bad{color:var(--bad)}.item-actions{display:flex;gap:5px;margin-top:10px}.item-actions button{font-size:12px;padding:6px 9px;border-radius:8px}.empty{border:1px dashed var(--line);border-radius:16px;padding:35px;text-align:center;color:var(--muted);grid-column:1/-1}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.category{padding:16px;text-align:left;color:var(--text)}.category b{display:block;font-size:16px}.category span{font-size:12px;color:var(--muted)}.modal-back{position:fixed;inset:0;background:#050914bb;display:none;align-items:center;justify-content:center;padding:16px;z-index:5}.modal-back.open{display:flex}.modal{width:min(620px,100%);max-height:92vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow)}.modal h2{margin:0 0 16px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:var(--muted)}.field input,.field textarea,.field select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text)}textarea{min-height:75px;resize:vertical}.checkline{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}.modal-foot{display:flex;justify-content:space-between;gap:8px;margin-top:18px}.modal-foot div{display:flex;gap:8px}.photo-preview{width:78px;height:78px;object-fit:cover;border-radius:12px;display:none}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:12px;display:none;z-index:9}.hidden{display:none!important}.footer-note{margin-top:22px;color:var(--muted);font-size:12px;text-align:center}
+@media(max-width:760px){.app{padding:16px 13px 85px}.layout{grid-template-columns:1fr}.side{padding:10px}.nav{flex-direction:row;overflow:auto}.nav button{white-space:nowrap}.items{grid-template-columns:1fr}.category-grid{grid-template-columns:repeat(2,1fr)}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:22px}.hero{align-items:start;flex-direction:column}.toolbar{flex-wrap:wrap}.toolbar .search{flex-basis:100%}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">MY STUFF <small>ЛИЧНЫЙ ИНВЕНТАРЬ</small></div>
+    <div class="actions">
+      <button class="btn icon" id="themeBtn" title="Сменить тему">☀</button>
+      <button class="btn" id="backupBtn">Резервная копия</button>
+    </div>
+  </header>
+  <section class="hero">
+    <div><h1 id="pageTitle">Всё под контролем.</h1><div class="muted" id="pageSub">Твои вещи, места и категории — в одном месте.</div></div>
+    <button class="btn primary" id="addBtn">＋ Добавить предмет</button>
+  </section>
+  <section class="stats">
+    <div class="stat"><strong id="statTypes">0</strong><span>Позиций каталога</span></div>
+    <div class="stat"><strong id="statCount">0</strong><span>Всего единиц</span></div>
+    <div class="stat"><strong id="statPlaces">0</strong><span>Мест хранения</span></div>
+  </section>
+  <div class="layout">
+    <aside class="panel side">
+      <h3>Навигация</h3>
+      <nav class="nav">
+        <button class="active" data-view="all">▦ Все предметы</button>
+        <button data-view="categories">◇ Категории</button>
+        <button data-view="places">⌖ Места хранения</button>
+        <button data-view="taken">↗ Взятые</button>
+        <button data-view="lost">! Потерянные</button>
+      </nav>
+    </aside>
+    <main class="main">
+      <div class="toolbar" id="toolbar">
+        <input class="search" id="search" placeholder="Поиск по названию, описанию, месту или тегу…">
+        <button class="btn" id="clearSearch">Сбросить</button>
+      </div>
+      <div class="filters" id="filters">
+        <select id="categoryFilter"><option value="">Все категории</option></select>
+        <select id="placeFilter"><option value="">Все места</option></select>
+        <select id="statusFilter"><option value="">Любой статус</option><option value="here">На месте</option><option value="taken">Взят</option><option value="moved">Перемещён</option><option value="lost">Потерян</option></select>
+      </div>
+      <div id="content" class="items"></div>
+    </main>
+  </div>
+  <div class="footer-note">Данные сохраняются на этом устройстве. Экспортируй резервную копию, чтобы не потерять инвентарь.</div>
+</div>
+
+<div class="modal-back" id="modalBack">
+ <div class="modal">
+  <h2 id="modalTitle">Новый предмет</h2>
+  <form id="itemForm">
+   <input type="hidden" id="editId">
+   <div class="form-grid">
+    <div class="field full"><label>Название *</label><input id="name" required maxlength="100" placeholder="Например, туристический фонарь"></div>
+    <div class="field"><label>Тип учёта</label><select id="tracking"><option value="bulk">Количество одной позиции</option><option value="individual">Отдельные экземпляры</option></select></div>
+    <div class="field"><label>Количество</label><input id="quantity" type="number" min="1" value="1"></div>
+    <div class="field"><label>Место хранения</label><select id="place"></select></div>
+    <div class="field"><label>Статус</label><select id="status"><option value="here">На месте</option><option value="taken">Взят</option><option value="moved">Перемещён</option><option value="lost">Потерян</option></select></div>
+    <div class="field full"><label>Категории / теги (через запятую)</label><input id="tags" placeholder="Поход, Инструменты, Работа"></div>
+    <div class="field full"><label>Описание</label><textarea id="description" placeholder="Особенности, модель, комплектность…"></textarea></div>
+    <div class="field"><label>Фотография</label><input id="photo" type="file" accept="image/*"></div>
+    <div class="field"><label>Предпросмотр</label><img id="photoPreview" class="photo-preview" alt="Предпросмотр"></div>
+    <div class="field full"><label>Отдельные экземпляры (необязательно)</label><div class="checkline"><input id="makeInstances" type="checkbox"> Создать экземпляры с индивидуальными местами и статусами</div></div>
+    <div class="field full hidden" id="instancesWrap"><label>Названия экземпляров (каждый с новой строки)</label><textarea id="instances" placeholder="Карабин красный&#10;Карабин синий&#10;Карабин запасной"></textarea></div>
+   </div>
+   <div class="modal-foot"><button type="button" class="btn" id="deleteBtn" style="display:none">Удалить</button><div><button type="button" class="btn" id="cancelBtn">Отмена</button><button class="btn primary" type="submit">Сохранить</button></div></div>
+  </form>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
